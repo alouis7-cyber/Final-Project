@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Media Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-left">MySocial</div>
+
+    <div class="nav-center">
+        <button onclick="showHome()">Home</button>
+        <button onclick="showSearch()">Search</button>
+        <button onclick="showProfile()">Profile</button>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- USERNAME -->
+    <div class="user-box">
+        <h3>Enter your username</h3>
+        <input id="usernameInput" placeholder="Your username">
+        <input id="searchInput" placeholder="Search users or posts..." onkeyup="searchPosts()">
+        <button onclick="setUsername()">Save Username</button>
+        <input type="file" id="profilePicInput" accept="image/*">
+
+    </div>
+
+    <hr>
+
+    <!-- POST CREATOR -->
+    <div class="post-box">
+        <textarea id="postInput" placeholder="What's on your mind?"></textarea>
+
+        <input type="file" id="imageInput" accept="image/*">
+
+        <button onclick="createPost()">Post</button>
+    </div>
+
+    <!-- PROFILE SECTION -->
+<div id="profile" class="profile-box" style="display:none;">
+    <img id="profilePicDisplay" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">
+
+    <h2 id="profileName"></h2>
+
+    <div class="profile-stats">
+        <p id="postCount"></p>
+        <p id="likeCount"></p>
+    </div>
+</div>
+
+
+    <!-- FEED -->
+    <div id="feed"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
