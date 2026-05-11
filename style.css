@@ -1,34 +1,50 @@
-/* ================= GLOBAL ================= */
+/* ===== GLOBAL STYLE ===== */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     background: #fafafa;
     color: #262626;
-    padding-bottom: 70px; /* space for bottom nav */
 }
 
-/* ================= CONTAINER ================= */
-.container {
+/* ===== TOP NAV BAR (LOGO + BUTTONS) ===== */
+.top-nav-bar {
     width: 100%;
-    max-width: 500px;
-    margin: auto;
-    padding: 10px;
-}
-
-/* ================= HEADER ================= */
-.app-header {
-    position: sticky;
-    top: 0;
     background: white;
     border-bottom: 1px solid #dbdbdb;
-    padding: 10px;
+    padding: 10px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
+.top-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.top-buttons button {
+    background: none;
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.top-buttons button:hover {
+    background: #efefef;
+    color: #0095f6;
+}
+
+/* ===== LOGO ===== */
 .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
 }
 
@@ -38,12 +54,12 @@ body {
 }
 
 .logo-text {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #0095f6;
 }
 
-/* ================= STORIES ================= */
+/* ===== STORIES BAR ===== */
 .stories-bar {
     display: flex;
     gap: 12px;
@@ -73,24 +89,62 @@ body {
 .story span {
     font-size: 11px;
     margin-top: 4px;
+    color: #262626;
 }
 
-/* ================= AUTH BOX ================= */
-.auth-box {
+/* ===== MAIN CONTAINER ===== */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* ===== WELCOME BOX ===== */
+.welcome-box {
     background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
     border: 1px solid #dbdbdb;
-    border-radius: 12px;
-    padding: 12px;
+    text-align: center;
+}
+
+.welcome-box h1 {
+    color: #0095f6;
     margin-bottom: 10px;
 }
 
-/* ================= INPUTS ================= */
+.welcome-box h2 {
+    margin-top: 20px;
+    color: #262626;
+}
+
+.welcome-box ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.welcome-box li {
+    margin: 8px 0;
+}
+
+/* ===== USER BOXES ===== */
+.user-box {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== INPUTS ===== */
 input, textarea {
     width: 100%;
     padding: 10px;
     margin-top: 8px;
     border: 1px solid #dbdbdb;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 14px;
     outline: none;
 }
@@ -100,59 +154,54 @@ textarea {
     resize: none;
 }
 
-/* ================= BUTTONS ================= */
+/* ===== GLOBAL BUTTONS ===== */
 button {
     margin-top: 10px;
     padding: 8px 12px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     background: #0095f6;
     color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 button:hover {
     background: #007cd1;
-    transform: scale(1.02);
 }
 
-/* ================= POST BOX ================= */
+/* ===== POST CREATOR ===== */
 .post-box {
-    background: white;
+    background: #fff;
+    padding: 15px;
     border: 1px solid #dbdbdb;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-/* ================= FEED ================= */
+/* ===== FEED ===== */
 #feed {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
-/* ================= POST CARD ================= */
+/* ===== POST CARD ===== */
 .post {
-    background: white;
+    background: #fff;
     border: 1px solid #dbdbdb;
-    border-radius: 14px;
+    border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-/* TEXT */
 .post p {
     margin: 5px 0;
     font-size: 14px;
 }
 
-/* IMAGE */
 .post img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 10px;
     margin-top: 10px;
 }
 
@@ -177,17 +226,24 @@ button:hover {
 .post div p {
     font-size: 13px;
     margin: 4px 0;
+    padding-left: 5px;
 }
 
-/* ================= PROFILE ================= */
-.profile-box,
-#profileSection {
+/* ===== PROFILE SECTION ===== */
+.profile-box {
     background: white;
     border: 1px solid #dbdbdb;
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
     text-align: center;
-    margin-bottom: 10px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 #profilePicDisplay {
@@ -195,53 +251,6 @@ button:hover {
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #dbdbdb;
     margin-bottom: 10px;
-}
-
-.profile-stats {
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-}
-
-/* ================= NAVBAR (BOTTOM) ================= */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-top: 1px solid #dbdbdb;
-    display: flex;
-    justify-content: space-around;
-    padding: 8px 0;
-    z-index: 1000;
-}
-
-.bottom-nav button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: #262626;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
-.bottom-nav small {
-    font-size: 10px;
-    margin-top: 2px;
-}
-
-.bottom-nav button.active {
-    color: #0095f6;
-}
-
-/* ================= FEED SPACING ================= */
-hr {
-    border: none;
-    border-top: 1px solid #dbdbdb;
-    margin: 15px 0;
+    border: 2px solid #dbdbdb;
 }

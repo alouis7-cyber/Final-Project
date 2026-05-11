@@ -3,117 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialConnect</title>
-
+    <title>TopSocialConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-<div class="app-header">
-    <div class="logo-container">
+    <!-- TOP NAV BAR (LOGO + ALL BUTTONS) -->
+    <div class="top-nav-bar">
 
-        <svg class="logo-icon" viewBox="0 0 64 64">
-            <circle cx="32" cy="32" r="30" fill="#0095f6"/>
-            <circle cx="20" cy="24" r="4" fill="white"/>
-            <circle cx="44" cy="24" r="4" fill="white"/>
-            <circle cx="32" cy="44" r="4" fill="white"/>
-            <line x1="20" y1="24" x2="44" y2="24" stroke="white" stroke-width="2"/>
-            <line x1="20" y1="24" x2="32" y2="44" stroke="white" stroke-width="2"/>
-            <line x1="44" y1="24" x2="32" y2="44" stroke="white" stroke-width="2"/>
-        </svg>
+        <!-- LOGO -->
+        <div class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="30" fill="#0095f6"/>
+                <circle cx="20" cy="24" r="4" fill="white"/>
+                <circle cx="44" cy="24" r="4" fill="white"/>
+                <circle cx="32" cy="44" r="4" fill="white"/>
+                <line x1="20" y1="24" x2="44" y2="24" stroke="white" stroke-width="2"/>
+                <line x1="20" y1="24" x2="32" y2="44" stroke="white" stroke-width="2"/>
+                <line x1="44" y1="24" x2="32" y2="44" stroke="white" stroke-width="2"/>
+            </svg>
+            <span class="logo-text">TopSocialConnect</span>
+        </div>
 
-        <span class="logo-text">SocialConnect</span>
-
-    </div>
-</div>
-
-<!-- ================= STORIES ================= -->
-<div class="stories-bar" id="storiesBar"></div>
-
-<!-- ================= AUTH SECTION ================= -->
-<div class="auth-box">
-
-    <input id="usernameInput" placeholder="Username">
-    <input id="passwordInput" type="password" placeholder="Password">
-
-    <input type="file" id="profilePicInput" accept="image/*">
-
-    <button onclick="signup()">Sign Up</button>
-    <button onclick="login()">Login</button>
-    <button onclick="logout()">Logout</button>
-
-    <button onclick="showNotifications()">Notifications</button>
-
-    <div id="notificationsPanel" style="display:none;">
-        <div id="notificationsList"></div>
-    </div>
-
-</div>
-
-<!-- ================= NAVIGATION ================= -->
-<div class="bottom-nav">
-    <button onclick="showHome()">🏠<br><small>Home</small></button>
-    <button onclick="showSearch()">🔍<br><small>Search</small></button>
-    <button onclick="showProfile()">👤<br><small>Profile</small></button>
-</div>
-
-<!-- ================= SUGGESTED USERS ================= -->
-<div id="suggestedUsers">
-    <h3>People You May Know</h3>
-    <div id="suggestedList"></div>
-</div>
-
-<!-- ================= PROFILE ================= -->
-<div id="profileSection">
-    <img id="profilePicDisplay" width="80" height="80" style="border-radius:50%">
-
-    <h3 id="profileName"></h3>
-
-    <p id="postCount"></p>
-    <p id="likeCount"></p>
-</div>
-
-<!-- ================= MAIN APP ================= -->
-<div class="container">
-
-    <!-- SEARCH -->
-    <input id="searchInput"
-           placeholder="Search posts..."
-           oninput="searchPosts()">
-
-    <!-- CREATE POST -->
-    <div class="post-box">
-
-        <textarea id="postInput" placeholder="What's on your mind?"></textarea>
-
-        <input type="file" id="imageInput" accept="image/*">
-
-        <button onclick="createPost()">Post</button>
+        <!-- ALL BUTTONS -->
+        <div class="top-buttons">
+            <button onclick="showHome()">🏠 Home</button>
+            <button onclick="showSearch()">🔍 Search</button>
+            <button onclick="showProfile()">👤 Profile</button>
+            <button onclick="showNotifications()">🔔</button>
+            <button onclick="showSignup()">Sign Up</button>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showLogout()">Logout</button>
+        </div>
 
     </div>
 
-    <!-- CHAT BOX -->
-    <div id="chatBox" style="display:none; border:1px solid #ccc; padding:10px; margin-top:10px;">
-        <h3>Chat</h3>
+    <!-- STORIES BAR -->
+    <div class="stories-bar" id="storiesBar"></div>
 
-        <div id="chatMessages" style="height:200px; overflow:auto;"></div>
+    <div class="container">
 
-        <input id="chatInput" placeholder="Type message...">
-        <button onclick="sendMessage()">Send</button>
+        <!-- AUTH / ACCOUNT -->
+        <div class="user-box">
+            <h3>Account</h3>
+            <input id="usernameInput" placeholder="Username">
+            <input id="passwordInput" type="password" placeholder="Password">
+            <input type="file" id="profilePicInput" accept="image/*">
 
-        <button onclick="document.getElementById('chatBox').style.display='none'">
-            Close
-        </button>
+            <button onclick="signup()">Sign Up</button>
+            <button onclick="login()">Login</button>
+            <button onclick="logout()">Logout</button>
+            <button onclick="backToFeed()">Back to Feed</button>
+
+            <button onclick="showNotifications()">Notifications</button>
+            <div id="notificationsPanel" style="display:none;">
+                <div id="notificationsList"></div>
+            </div>
+        </div>
+
+        <!-- SUGGESTED USERS -->
+        <div id="suggestedUsers" class="user-box">
+            <h3>People You May Know</h3>
+            <div id="suggestedList"></div>
+        </div>
+        <div class="welcome-box">
+            <h2>Welcome to TSC</h2>
+    <h1>TSC Means TopSocialConnect 🚀</h1>
+
+    <p>
+        TopSocialConnect is my personal social media platform where users can
+        connect, share, interact, and communicate in real time.
+    </p>
+    <p>Thank you Mrs Monique!</p>
+        This app is built using JavaScript, HTML, and CSS, and it simulates
+        a modern social network experience inspired by Instagram-style interaction.
+
+    <h2>✨ What you can do</h2>
+
+    <ul>
+        <li>👤 Create your own account (Sign Up / Login)</li>
+        <li>🖼 Upload a profile picture</li>
+        <li>📝 Create posts with text and images</li>
+        <li>❤️ Like posts</li>
+        <li>💬 Comment on posts</li>
+        <li>👥 Follow / Unfollow other users</li>
+        <li>🔔 Receive notifications</li>
+        <li>📸 View stories</li>
+        <li>👤 Visit user profiles</li>
+        <li>💌 Chat with other users</li>
+        <li>🔍 Search users and posts</li>
+        <li>🏠 Navigate through Home / Search / Profile</li>
+    </ul>
+
+    <h2>🌟 App Goal</h2>
+
+    <p>
+        SocialConnect is designed to simulate a real modern social network
+        inspired by Instagram-style interaction, helping users connect and share.
+    </p>
+
+    <p><b>Start by creating an account and posting your first update!</b></p>
+</div>
+        <!-- PROFILE SECTION -->
+        <div id="profileSection" class="profile-box">
+            <img id="profilePicDisplay" width="80" height="80" style="border-radius:50%;object-fit:cover;">
+            <h3 id="profileName"></h3>
+            <div class="profile-stats">
+                <p id="postCount"></p>
+                <p id="likeCount"></p>
+                <p id="followCount"></p>
+            </div>
+        </div>
+
+        <!-- FEED CONTROLS -->
+        <div class="user-box">
+            <h3>Feed controls</h3>
+            <input id="displayUsernameInput" placeholder="Set display username">
+            <button onclick="setUsername()">Save Username</button>
+
+            <input id="searchInput" placeholder="Search users or posts..." onkeyup="searchPosts()">
+        </div>
+
+        <!-- POST CREATOR -->
+        <div class="post-box">
+            <textarea id="postInput" placeholder="What's on your mind?"></textarea>
+            <input type="file" id="imageInput" accept="image/*">
+            <button onclick="createPost()">Post</button>
+        </div>
+
+        <!-- CHAT BOX -->
+        <div id="chatBox" style="display:none; border:1px solid #ccc; padding:10px;">
+            <h3>Chat</h3>
+            <div id="chatMessages" style="height:200px; overflow:auto;"></div>
+            <input id="chatInput" placeholder="Type message...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="document.getElementById('chatBox').style.display='none'">Close</button>
+        </div>
+
+        <!-- FEED -->
+        <div id="feed"></div>
+
     </div>
 
-    <!-- FEED -->
-    <div id="feed"></div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
