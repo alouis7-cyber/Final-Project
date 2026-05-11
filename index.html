@@ -11,13 +11,49 @@
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="nav-left">MySocial</div>
+    <div class="nav-left">Toplap</div>
 
     <div class="nav-center">
         <button onclick="showHome()">Home</button>
         <button onclick="showSearch()">Search</button>
+        <button onclick="signup()">Sign Up</button>
+        <button onclick="login()">Login</button>
+        <button onclick="logout()">Logout</button>
         <button onclick="showProfile()">Profile</button>
+        <img id="profilePicDisplay" width="80" height="80" style="border-radius:50%">
     </div>
+</div>
+<div id="notificationsPanel" style="display:none;">
+    <h3>Notifications 🔔</h3>
+    <div id="notificationsList"></div>
+</div>
+
+<button onclick="showNotifications()">Notifications</button>
+<div class="auth-box">
+
+    <h2>Login or Create an Account</h2>
+
+    <input id="usernameInput" placeholder="Username">
+    <input id="passwordInput" type="password" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+    <button onclick="backToFeed()">Back to Feed</button>
+    <input type="file" id="profilePicInput" accept="image/*">
+    
+</div>
+<div id="suggestedUsers">
+    <h3>People You May Know</h3>
+    <div id="suggestedList"></div>
+</div>
+
+<div id="profileSection">
+    <img id="profilePicDisplay" width="80" height="80" style="border-radius:50%">
+    <h3 id="profileName"></h3>
+    <p id="postCount"></p>
+    <p id="likeCount"></p>
+
+    <!-- FOLLOW BUTTON WILL BE ADDED HERE -->
 </div>
 
 <div class="container">
@@ -42,6 +78,18 @@
 
         <button onclick="createPost()">Post</button>
     </div>
+    <div id="chatBox" style="display:none; border:1px solid #ccc; padding:10px;">
+    <h3>Chat</h3>
+
+    <div id="chatMessages" style="height:200px; overflow:auto;"></div>
+
+    <input id="chatInput" placeholder="Type message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <button onclick="document.getElementById('chatBox').style.display='none'">
+        Close
+    </button>
+</div>
 
     <!-- PROFILE SECTION -->
 <div id="profile" class="profile-box" style="display:none;">
