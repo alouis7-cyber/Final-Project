@@ -8,7 +8,7 @@ let tapMap = {};
 let follows = {};
 let searchQuery = "";
 let notifications = [];
-let users = [{ username: "alex", password: "1234", profilePic: "" }];
+let users = [{ username: "Anglad", password: "1234", profilePic: "" }];
 let viewedUser = null;
 let messages = {};
 
