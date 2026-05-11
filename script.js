@@ -44,6 +44,7 @@ if (savedMessages) {
 }
 
 loadSuggestedUsers();
+loadStories();
 
 let savedUsers = localStorage.getItem("users");
 
@@ -345,7 +346,7 @@ function signup() {
         password: pass,
         profilePic: ""
     };
-
+    loadStories();
     // HANDLE IMAGE
     if (picInput.files.length > 0) {
         let reader = new FileReader();
@@ -378,6 +379,7 @@ function login() {
         return;
     }
     loadSuggestedUsers();
+    loadStories();
     username = found.username;
     currentUser = found;
     isLoggedIn = true;
@@ -596,5 +598,63 @@ function sendMessage() {
 
     input.value = "";
 }
+
+
+function setActiveTab(tab) {
+    document.querySelectorAll(".bottom-nav button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    if (tab === "home") document.querySelectorAll(".bottom-nav button")[0].classList.add("active");
+    if (tab === "search") document.querySelectorAll(".bottom-nav button")[1].classList.add("active");
+    if (tab === "profile") document.querySelectorAll(".bottom-nav button")[2].classList.add("active");
+}
+
+function showHome() {
+    currentView = "home";
+    displayPosts();
+    setActiveTab("home");
+}
+
+function showSearch() {
+    alert("Search coming soon 🔍");
+    setActiveTab("search");
+}
+
+function showProfile() {
+    currentView = "profile";
+    displayPosts();
+    updateProfile();
+    setActiveTab("profile");
+}
+
+function loadStories() {
+    let bar = document.getElementById("storiesBar");
+    if (!bar) return;
+
+    bar.innerHTML = "";
+
+    users.forEach(user => {
+
+        let story = document.createElement("div");
+        story.className = "story";
+
+        let img = document.createElement("img");
+        img.src = user.profilePic || "https://via.placeholder.com/60";
+
+        let name = document.createElement("span");
+        name.innerText = user.username;
+
+        story.onclick = function () {
+            openProfile(user.username);
+        };
+
+        story.appendChild(img);
+        story.appendChild(name);
+
+        bar.appendChild(story);
+    });
+}
+
+
 
 }
